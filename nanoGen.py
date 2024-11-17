@@ -34,11 +34,11 @@ def getAddr(pub,pre=prefix[0]):
     addr = addr.translate(bytes.maketrans(base64._b32alphabet,encodix))[4:]
     return pre + addr.decode()
 
-def gen():
+def gen(index):
     #seed = binascii.hexlify(int(1).to_bytes(32)).decode()
     seed = getSeed()
     print(f'seed: {seed}')
-    priv = getPriv(seed,0)
+    priv = getPriv(seed,index)
     print(f'priv: {priv}')
     pub = getPub(priv)
     print(f'pub: {pub}')
