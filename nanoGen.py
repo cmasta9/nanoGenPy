@@ -34,7 +34,7 @@ def getAddr(pub,pre=prefix[0]):
     addr = addr.translate(bytes.maketrans(base64._b32alphabet,encodix))[4:]
     return pre + addr.decode()
 
-def gen(index):
+def gen(index=0):
     #seed = binascii.hexlify(int(1).to_bytes(32)).decode()
     seed = getSeed()
     print(f'seed: {seed}')
